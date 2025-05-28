@@ -2,36 +2,32 @@ package com.back;
 
 public class Quote {
     private int id;
-    private String wiseSaying;
+    private String content;
     private String author;
 
     public int getId() {
         return id;
     }
-    public String getWiseSaying() {
-        return wiseSaying;
+
+    public String getContent() {
+        return content;
     }
+
     public String getAuthor() {
         return author;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setContent(String content) {
+        this.content = content;
     }
-    public void setWiseSaying(String wiseSaying) {
-        this.wiseSaying = wiseSaying;
-    }
+
     public void setAuthor(String author) {
         this.author = author;
     }
 
-
-    public Quote(int id){
+    public Quote(int id, String content, String author) {
         this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return "%d / %s / %s".formatted(id, author, wiseSaying);
+        this.content = content;
+        this.author = author;
     }
 }
