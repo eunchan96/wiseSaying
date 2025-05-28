@@ -76,10 +76,10 @@ public class App {
             System.out.println(id + "번 명언은 존재하지 않습니다.");
             return;
         }
-        System.out.println("명언(기존) : " + quotes.get(id - 1).wiseSaying);
+        System.out.println("명언(기존) : " + quotes.get(id - 1).getWiseSaying());
         System.out.print("명언 : ");
         String wiseSaying = scanner.nextLine().trim();
-        System.out.println("작가(기존) : " + quotes.get(id - 1).author);
+        System.out.println("작가(기존) : " + quotes.get(id - 1).getAuthor());
         System.out.print("작가 : ");
         String author = scanner.nextLine().trim();
 
@@ -96,13 +96,13 @@ public class App {
 
     Quote write(String wiseSaying, String author) {
         Quote quote = new Quote(++LastID);
-        quote.wiseSaying = wiseSaying;
-        quote.author = author;
+        quote.setWiseSaying(wiseSaying);
+        quote.setAuthor(author);
         return quote;
     }
 
     void modify(int id, String wiseSaying, String author) {
-        quotes.get(id - 1).wiseSaying = wiseSaying;
-        quotes.get(id - 1).author = author;
+        quotes.get(id - 1).setWiseSaying(wiseSaying);
+        quotes.get(id - 1).setAuthor(author);
     }
 }
